@@ -6,6 +6,9 @@
     {{-- Login --}}
     <div class="col-6 login">
       <h3 class="text-center">Login</h3>
+      @if (Session::has('messageLogin'))
+      <p class="alert alert-danger alert-dismissible">{!! Session::get('messageLogin') !!}</p>
+      @endif
       <form class="" action="{{route('login.enter')}}" method="post">
         {{csrf_field()}}
         <div class="form-group">
@@ -23,6 +26,12 @@
     {{-- Registrar user --}}
     <div class="col-6">
       <h3 class="text-center">Register</h3>
+      @if (Session::has('messageRegisterSuccess'))
+      <p class="alert alert-success alert-dismissible">{!! Session::get('messageRegisterSuccess') !!}</p>
+      @endif
+      @if (Session::has('messageRegister'))
+      <p class="alert alert-danger alert-dismissible">{!! Session::get('messageRegister') !!}</p>
+      @endif
       <form class="" action="{{route('login.register')}}" method="post">
         {{csrf_field()}}
         <div class="form-group">

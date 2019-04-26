@@ -17,10 +17,15 @@ class LoginController extends Controller
 
   public function register(){
     $user = new User;
-
-    $user->name = Input::get('name');
-    $user->email = Input::get('email');
-    $user->password = bcrypt(Input::get('password'));
+    if(Input::get('name') && Input::get('email') && Input::get('password')){
+      $user->name = Input::get('name');
+      $user->email = Input::get('email');
+      $user->password = bcrypt(Input::get('password'));
+      \Session::flash('messageRegisterSuccess', 'Success!');
+    }else{
+      \Session::flash('messageRegister', 'password Required!');
+      return redirect()->route('login');
+    }
     $user->save();
 
     return redirect()->route('admin.anime.index');
@@ -30,8 +35,12 @@ class LoginController extends Controller
     $dados = $req->all();
     if(Auth::attempt(['email'=> $dados['email'], 'password' => Input::get('password')])){
       return redirect()->route('admin.anime.index');
+    }else{
+      \Session::flash('messageLogin', 'Credentials do not match!');
+      return redirect()->route('login');
     }
-    redirect()->route('login');
+
+
   }
 
   public function logout(){

@@ -5,6 +5,9 @@
 
 <div id="main" class="container table text-center">
   <h3 class=" section-title">Lista de animes</h3>
+  @if (Session::has('message'))
+  <p class="alert alert-success alert-dismissible">{!! Session::get('message') !!}</p>
+  @endif
   <table class="text-center" id="animes_table">
     <thead>
       <tr>

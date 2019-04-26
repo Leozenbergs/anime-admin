@@ -3,6 +3,9 @@
 
 @section('content')
 <div class="container">
+  @if (Session::has('message'))
+  <p class="alert alert-danger alert-dismissible">{!! Session::get('message') !!}</p>
+  @endif
   <form action="{{route('admin.anime.update', $registro->id)}}" method="post" enctype="multipart/form-data">
     {{csrf_field()}}
     <input type="hidden" name="_method" value="put">

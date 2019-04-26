@@ -30,9 +30,14 @@ class AnimeController extends Controller
         $nomeImagem = "imagem_".$num.".".$ex;
         $imagem->move($dir, $nomeImagem); // move imagem para o diretorio
         $info['imagem'] = $dir."/".$nomeImagem;
+      }else{
+        \Session::flash('message', 'Fail, image required!');
+        return false;
       }
 
       Anime::create($info);
+
+      \Session::flash('message', 'Success!');
 
       return redirect()->route('admin.anime.index');
     }
@@ -56,10 +61,13 @@ class AnimeController extends Controller
         $nomeImagem = "imagem_".$num.".".$ex;
         $imagem->move($dir, $nomeImagem); // move imagem para o diretorio
         $info['imagem'] = $dir."/".$nomeImagem;
+      }else{
+        \Session::flash('message', 'Fail, image required!');
+        return false;
       }
 
       Anime::find($id)->update($info); // Procura no banco a row com o id e lança o update
-
+      \Session::flash('message', 'Success!');
       return redirect()->route('admin.anime.index');
     }
 
