@@ -19,7 +19,7 @@ Route::post('/enter', ['as'=>'login.enter', 'uses'=>'LoginController@enter']);
 Route::post('/register', ['as'=>'login.register', 'uses'=>'LoginController@register']);
 
 Route::get('/logout', ['as'=>'admin.anime.logout', 'uses'=>'LoginController@logout']);
-
+Route::get('/animes', ['as'=>'anime.index', 'uses'=>'admin\AnimeController@animes']);
 // cadastro de animes
 Route::group(['middleware'=>'auth'], function(){
 

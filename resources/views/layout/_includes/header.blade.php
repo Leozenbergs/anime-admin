@@ -25,6 +25,9 @@
           </li>
           @if(Auth::guest())
             <li class="nav-item">
+              <a class="nav-link" href="{{route('anime.index')}}">Animes</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{route('login')}}">Login</a>
             </li>
           @else

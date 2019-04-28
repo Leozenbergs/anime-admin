@@ -4,7 +4,7 @@
 @section('content')
 
 <div id="main" class="container table text-center">
-  <h3 class=" section-title">Lista de animes</h3>
+  <h3 class=" section-title">Anime List</h3>
   @if (Session::has('message'))
   <p class="alert alert-success alert-dismissible">{!! Session::get('message') !!}</p>
   @endif

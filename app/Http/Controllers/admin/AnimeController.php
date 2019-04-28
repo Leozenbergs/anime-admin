@@ -12,6 +12,11 @@ class AnimeController extends Controller
       $registros = Anime::all();
       return view('anime.index', compact('registros'));
     }
+
+    public function animes(){
+      $registros = Anime::all();
+      return view('animes', compact('registros'));
+    }
     //
 
     public function register(){

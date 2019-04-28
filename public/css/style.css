@@ -4,4 +4,6 @@
 .login{
   border-right: 1px solid #cecece;
 }
- 
+.card_descricao{
+  min-height: 130px;
+}
