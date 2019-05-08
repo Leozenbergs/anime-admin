@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 use App\Http\Controllers\Controller;
 use App\Anime;
 
@@ -29,12 +31,23 @@ class AnimeController extends Controller
       // tratamento de imagem
       if($req->hasFile('imagem')){//imagem = name
         $imagem = $req->file('imagem');
+        // $nomeOrigImg = $imagem->getClientOriginalName();
         $num = rand(1111,9999);
-        $dir = 'img/animes'; //diretorio
+        $diretorio = 'img/animes';
+        $dir = 'https://s3-sa-east-1.amazonaws.com/anime-admin/teste'; //diretorio
         $ex =  $imagem->guessClientExtension(); // extenção
         $nomeImagem = "imagem_".$num.".".$ex;
-        $imagem->move($dir, $nomeImagem); // move imagem para o diretorio
+        $imagem->move($diretorio, $nomeImagem); // move imagem para o diretorio
         $info['imagem'] = $dir."/".$nomeImagem;
+        $fContent= $diretorio."/".$nomeImagem;
+        // dd($info['imagem']);
+        $diskCloud = Storage::disk('s3');
+        // $diskCloud->registerStreamWrapper();
+        $diskCloud->put('teste/'.$nomeImagem, file_get_contents($fContent));
+
+        if($diskCloud->exists($nomeImagem)){
+          return $diskCloud->files('teste');
+        }
       }else{
         \Session::flash('message', 'Fail, image required!');
         return false;
@@ -60,12 +73,23 @@ class AnimeController extends Controller
       // tratamento de imagem
       if($req->hasFile('imagem')){//imagem = name
         $imagem = $req->file('imagem');
+        // $nomeOrigImg = $imagem->getClientOriginalName();
         $num = rand(1111,9999);
-        $dir = 'img/cursos'; //diretorio
+        $diretorio = 'img/animes';
+        $dir = 'https://s3-sa-east-1.amazonaws.com/anime-admin/teste'; //diretorio
         $ex =  $imagem->guessClientExtension(); // extenção
         $nomeImagem = "imagem_".$num.".".$ex;
-        $imagem->move($dir, $nomeImagem); // move imagem para o diretorio
+        $imagem->move($diretorio, $nomeImagem); // move imagem para o diretorio
         $info['imagem'] = $dir."/".$nomeImagem;
+        $fContent= $diretorio."/".$nomeImagem;
+        // dd($info['imagem']);
+        $diskCloud = Storage::disk('s3');
+        // $diskCloud->registerStreamWrapper();
+        $diskCloud->put('teste/'.$nomeImagem, file_get_contents($fContent));
+
+        if($diskCloud->exists($nomeImagem)){
+          return $diskCloud->files('teste');
+        }
       }else{
         \Session::flash('message', 'Fail, image required!');
         return false;
