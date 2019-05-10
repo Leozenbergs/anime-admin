@@ -8,7 +8,7 @@
     <div class="row">
     @foreach ($dados as $dado)
 
-      <div class="col-4 d-flex justify-content-center">
+      <div class="col-12 col-sm-4 d-flex justify-content-center">
         <div class="card text-center">
           <div class="card_image">
             <img class="card_anime-image" src="{{$dado->imagem}}" alt="">

@@ -4,7 +4,7 @@
 <div class="container text-center">
   <div class="row">
     {{-- Login --}}
-    <div class="col login">
+    <div class="col-12 col-sm login">
       <h3 class="text-center main_color">Login</h3>
       @if (Session::has('messageLogin'))
       <p class="alert alert-danger alert-dismissible">{!! Session::get('messageLogin') !!}</p>
@@ -23,9 +23,9 @@
         <button type="submit" class="btn main_button">Login</button>
       </form>
     </div>
-    <hr class="form_division"/>
+    <hr class="form_division d-none d-sm-block"/>
     {{-- Registrar user --}}
-    <div class="col register">
+    <div class="col-12 col-sm register">
       <h3 class="text-center main_color">Register</h3>
       @if (Session::has('messageRegisterSuccess'))
       <p class="alert alert-success alert-dismissible">{!! Session::get('messageRegisterSuccess') !!}</p>
