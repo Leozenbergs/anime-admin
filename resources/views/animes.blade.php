@@ -4,8 +4,9 @@
 @section('content')
 
 <div id="main" class="container table text-center">
-  <h3 class=" section-title">Anime List</h3>
-  
+  <h3 class="main_color mt-2 mb-0 section-title">Anime List</h3>
+  <hr class="section_divisor mb-4" />
+
   <table class="text-center" id="animes_table">
     <thead>
       <tr>

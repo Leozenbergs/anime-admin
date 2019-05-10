@@ -1,9 +1,43 @@
+:root{
+  --main-color: #ff9966;
+}
 #animes_table{
   width: 100%;
 }
-.login{
-  border-right: 1px solid #cecece;
+.navbar{
+  box-shadow: 0px 0px 5px #ccc;
+}
+.main_color{
+  color: var(--main-color) !important;
+}
+.card_title{
+  border-bottom: 1px solid #f0f0f0;
+}
+.main_button{
+  background: var(--main-color) !important;
+  color: #fff;
+  text-transform: uppercase;
+}
+.section_divisor{height: 1px;width: 15%;background: var(--main-color);}
+.card{width: 75% !important;border: none; box-shadow: 0px 0px 10px #ccc;}
+.card_anime-image{
+  object-fit: cover;
+  max-width: 100%;
+  height: 250px;
+  border-radius: 3px;
+}
+.form_division{
+  width: 1px;
+  height:300px;
+  background: var(--main-color);
 }
 .card_descricao{
   min-height: 130px;
+}
+.form_login, .form_register{
+  display: inline-block;
+  width: 50%;
+}
+.login,.register{
+  margin-top:25px;
 }
