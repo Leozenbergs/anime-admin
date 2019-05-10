@@ -5,13 +5,13 @@ A simple CRUD system with authentication login that let you make your own anime 
 ## Build for organize anime lists
 
 ### Register
-![register](img/register.png?raw=true)
+![register](public/img/register.png?raw=true)
 
 ### Edit
-![edit](img/edit.png?raw=true)
+![edit](public/img/edit.png?raw=true)
 
 ### Delete
-![delete](img/delete.png?raw=true)
+![delete](public/img/delete.png?raw=true)
 
 ## Build your local
 
