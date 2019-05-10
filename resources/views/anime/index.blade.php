@@ -11,10 +11,10 @@
   <table class="text-center" id="animes_table">
     <thead>
       <tr>
-        <th>Titulo</th>
-        <th>Descricao</th>
-        <th>Imagem</th>
-        <th>Acao</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -24,8 +24,8 @@
         <td>{{$registro->descricao}}</td>
         <td class="center-align"><img height="60" src="{{asset($registro->imagem)}}" alt="{{$registro->titulo}}"></td>
         <td>
-          <a class="btn" href="{{route('admin.anime.edit', $registro->id)}}">Editar</a>
-          <a class="btn btn-danger" href="{{route('admin.anime.delete', $registro->id)}}">Deletar</a>
+          <a class="btn" href="{{route('admin.anime.edit', $registro->id)}}">Edit</a>
+          <a class="btn btn-danger" href="{{route('admin.anime.delete', $registro->id)}}">Delete</a>
         </td>
       </tr>
       @endforeach

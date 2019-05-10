@@ -1,5 +1,5 @@
 @extends('layout.default')
-@section('titulo', 'Cadastro de animes')
+@section('titulo', 'Anime Register')
 
 @section('content')
 <div class="container">

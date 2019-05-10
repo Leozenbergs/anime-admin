@@ -10,9 +10,9 @@
   <table class="text-center" id="animes_table">
     <thead>
       <tr>
-        <th>Imagem</th>
-        <th>Titulo</th>
-        <th>Descricao</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Description</th>
 
       </tr>
     </thead>
