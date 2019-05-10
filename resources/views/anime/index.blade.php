@@ -34,7 +34,7 @@
 
 </div>
 <div class="text-center">
-  <a class="btn btn-primary" href="{{route('admin.anime.register')}}">Adicionar</a>
+  <a class="btn main_button href="{{route('admin.anime.register')}}">Register anime</a>
 </div>
 
 
